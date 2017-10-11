@@ -4,15 +4,13 @@ Traffic-watch is a bash script that could helps you to deal with the daily traff
 
 The sctip is inspired by the question <a href="https://askubuntu.com/questions/963522/daily-download-limit">Daily Download Lmit?</a> of <a href="https://askubuntu.com/">AskUbuntu.com</a>.
 
-My suggestion is the following script that will get the data of incoming and outgoing traffic from `ifconfig interface-name` and will compare the sum with a predefined limit value. This action will be repeated every 5 seconds (for example). 
+The script will get the data of incoming and outgoing traffic from `ifconfig interface-name` and will compare the sum with a predefined limit value. This action will be repeated every 5 seconds (for example). 
 
 When the amount of the traffic (income+outcome) becomes equal or greater than the limit, the script will disable the target interface and exit. The maximum discrepancy between the actual value at which the interface will be disabled and the limit value will be equal to `5s` x `MaxSpeed`.
 
 The script can be executed by Cron job. So you will be able to set different job for each day of the week, etc. Additionally when the limit is reached you can run the script manually with an additional amount of traffic.
 
-The script name should be **`traffic-watch`**, otherwise you should change its 5th line. My suggestion is to place it in `/usr/local/bin`, thus it will be available as shell command. Don't forget to make it executable: 
-
-    chmod +x /usr/local/bin/traffic-watch
+The script name should be **`traffic-watch`**, otherwise you should change its 5th line. My suggestion is to place (or symlink) it in `/usr/local/bin`, thus it will be available as shell command. Don't forget to make it executable. There is an interactive `install.bash`.
       
 The script should be executed as root (`sudo`). It creates a log file: `/tmp/traffic-watch-interface-name.log`, where you can check the last action. The script has two input variables:
 
