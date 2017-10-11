@@ -60,7 +60,9 @@ To run the script as root and push it into the background we shall use <a href="
 
    *Replace `eth0` with the actual interface in use.*
 
-- This script can be recreated to work with `iptables` instead of`ifconfig - up/down`. 
+- To get back your network interface UP: First ise `ifconfig -a` to find its name. Then `sudo ifconfig INTERFACE up`.
+
+- This script could be recreated to work with `iptables` instead of`ifconfig - up/down`. 
 **This will be a powerful solution**.
 
 ## References
