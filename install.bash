@@ -31,20 +31,23 @@ case $CHOICE in
     SymLink)
         sudo chmod +x "$(pwd)/traffic-watch.bash"
         sudo ln -s "$(pwd)/traffic-watch.bash" "/usr/local/bin/traffic-watch"
+	printf '\n\nNow you can use "traffic-watch" as shell command\n\n'
         ;;
 
     Copy)
         sudo chmod +x "$(pwd)/traffic-watch.bash"
         sudo cp "$(pwd)/traffic-watch.bash" "/usr/local/bin/traffic-watch"
+	printf '\n\nNow you can use "sudo -b traffic-watch LIMIT INTERFACE" as shell command\n\n'
         ;;
 
     StatusCMD)
 	printf '\n#!/bin/sh\ncat /tmp/traffic-watch-*.log\n' | sudo tee "/usr/local/bin/traffic-watch-status"
 	sudo chmod +x "/usr/local/bin/traffic-watch-status"
+	printf '\n\nNow you can use "sudo -b traffic-watch LIMIT INTERFACE" as shell command\n\n'
         ;;
 
     Remove)
-	sudo rm -f "/usr/local/bin/traffic-watch" "/usr/local/bin/traffic-watch-status" >/dev/null 2>&1 
+	sudo rm -f "/usr/local/bin/traffic-watch" "/usr/local/bin/traffic-watch-status" >/dev/null 2>&1
         ;;
 
     LocalStatus)
