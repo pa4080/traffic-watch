@@ -40,7 +40,7 @@ To run the script as root and push it into the background we shall use [`sudo -b
     
 ## Notes
 
-- Disable the script when you update and upgrade the system! The lack of internet could be cause broken packages.
+- **Disable the script when you update and upgrade the system! The lack of internet could be cause broken packages.**
 
 - It is a good idea to attempt to kill the previous instance of the script (just in case its limit is not reached) before run a new:
 
