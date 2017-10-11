@@ -1,16 +1,21 @@
 #!/bin/bash
-HEIGHT=12
-CHOICE_HEIGHT=4
-WIDTH=90
+HEIGHT=17
+CHOICE_HEIGHT=9
+WIDTH=96
 BACKTITLE="Simple installer"
 TITLE="[ Traffic Watch Installer ]"
 MENU="Create symbolic link or copy the script:"
 
 OPTIONS=(
-SymLink   ' sudo ln -s $(pwd)/traffic-watch.bash /usr/local/bin/traffic-watch '
-Copy      ' sudo cp $(pwd)/traffic-watch.bash /usr/local/bin/traffic-watch    '
-Shell     " Back to CLI"
-Remove    ' rm -f /usr/local/bin/traffic-watch'
+SymLink   'sudo ln -s $(pwd)/traffic-watch.bash /usr/local/bin/traffic-watch'
+Copy      'sudo cp $(pwd)/traffic-watch.bash /usr/local/bin/traffic-watch'
++ ' '
+StatusCMD 'Create local status shortcut: traffic-watch-status'
++ ' '
+Remove       'sudo rm -f /usr/local/bin/traffic-watch'
++ ' '
+LocalStatus  'cat /tmp/traffic-watch-*.log'
+RemoteStatus 'ssh user@host.or.ip tail -n3 /tmp/traffic-watch-INTERFACE.log'
 )
 
 CHOICE=$(whiptail --clear \
@@ -33,10 +38,25 @@ case $CHOICE in
         sudo cp "$(pwd)/traffic-watch.bash" "/usr/local/bin/traffic-watch"
         ;;
 
-
-    Shell)
-        exit
+    StatusCMD)
+	printf '\n#!/bin/sh\ncat /tmp/traffic-watch-*.log\n' | sudo tee "/usr/local/bin/traffic-watch-status"
+	sudo chmod +x "/usr/local/bin/traffic-watch-status"
         ;;
+
+    Remove)
+	sudo rm -f "/usr/local/bin/traffic-watch" "/usr/local/bin/traffic-watch-status" >/dev/null 2>&1 
+        ;;
+
+    LocalStatus)
+	cat "/tmp/traffic-watch-*.log"
+        ;;
+
+    RemoteStatus)
+        printf '\nTo check the status remotely, use the following command:\n'
+	printf '\n\tuser@host.or.ip tail -n3 /tmp/traffic-watch-INTERFACE.log\n'
+	printf '\nReplace "user@host.or.ip" and "INTERFACE" with the actual value in use.\n\n'
+        ;;
+
 esac
 
 

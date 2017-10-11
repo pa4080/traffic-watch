@@ -44,7 +44,7 @@ while [[ "$(get_ip)" =~ ${IPPT} ]]; do
 
     if (( XM >= LIMIT )); then
         printf '\nThe daily limit of %s MB was reached.' "$LIMIT" >> "$LOG"
-        printf '\nThe interface %s was disabled!\n\n' "$IFACE" >> "$LOG"
+        printf '  The interface %s was disabled!\n\n' "$IFACE" >> "$LOG"
         interface_down
     else
             printf '\n%s MB remains on %s.\n\n' "$(( LIMIT - XM ))" "$IFACE" >> "$LOG"
