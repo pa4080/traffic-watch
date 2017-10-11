@@ -2,7 +2,7 @@
 
 Traffic-watch is a bash script that helps you to deal with the daily traffic limit. It is helpful especially on headless machines because almost all similar applications are designed to work with GUI.
 
-The sctip is inspired by the question <a href="https://askubuntu.com/questions/963522/daily-download-limit">Daily Download Lmit?</a> of AskUbuntu.com
+The sctip is inspired by the question <a href="https://askubuntu.com/questions/963522/daily-download-limit">Daily Download Lmit?</a> of <a href="https://askubuntu.com/">AskUbuntu.com</a>.
 
 My suggestion is the following script that will get the data of incoming and outgoing traffic from `ifconfig interface-name` and will compare the sum with a predefined limit value. This action will be repeated every 5 seconds (for example). 
 
@@ -34,7 +34,7 @@ If you want to run the script every morning at `6:30`, open root's Crontab (`sud
 
 ## Use 'traffic-watch' manually 
 
-To run the script as root and push it into the background we shall use [`sudo -b`][1]:
+To run the script as root and push it into the background we shall use <a href="https://askubuntu.com/q/750419/566421">`sudo -b`<a>:
 
     sudo -b traffic-watch "150" 2>/dev/null
     
@@ -65,4 +65,9 @@ To run the script as root and push it into the background we shall use [`sudo -b
 - This script can be recreated to work with `iptables` instead of`ifconfig - up/down`. 
 **This will be a powerful solution**.
 
+## References
+
+- <a href="https://askubuntu.com/questions/348038/how-to-reset-ifconfig-counters">How to reset ifconfig counters?</a>
+
+- <a href="https://askubuntu.com/questions/277284/execute-script-when-network-interface-is-up">How to execute script when network interface is up?</a>
 
