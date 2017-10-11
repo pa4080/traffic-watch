@@ -1,6 +1,6 @@
 #!/bin/bash
-HEIGHT=11
-CHOICE_HEIGHT=3
+HEIGHT=12
+CHOICE_HEIGHT=4
 WIDTH=90
 BACKTITLE="Simple installer"
 TITLE="[ Traffic Watch Installer ]"
@@ -10,6 +10,7 @@ OPTIONS=(
 SymLink   ' sudo ln -s $(pwd)/traffic-watch.bash /usr/local/bin/traffic-watch '
 Copy      ' sudo cp $(pwd)/traffic-watch.bash /usr/local/bin/traffic-watch    '
 Shell     " Back to CLI"
+Remove    ' rm -f /usr/local/bin/traffic-watch'
 )
 
 CHOICE=$(whiptail --clear \
