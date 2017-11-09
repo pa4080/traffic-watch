@@ -65,7 +65,7 @@ To run the script as root and push it into the background we shall use <a href="
 
 ## References
 
-- <a href="https://askubuntu.com/questions/348038/how-to-reset-ifconfig-counters">How to reset ifconfig counters?</a>
-
-- <a href="https://askubuntu.com/questions/277284/execute-script-when-network-interface-is-up">How to execute script when network interface is up?</a>
-
+- [How to reset ifconfig counters?](https://askubuntu.com/questions/348038/how-to-reset-ifconfig-counters)
+- [How to execute script when network interface is up?](https://askubuntu.com/questions/277284/execute-script-when-network-interface-is-up)
+- [More about the calculations](https://unix.stackexchange.com/a/40787/201297)
+- [The connected project `traffic-get`](https://github.com/pa4080/traffic-get)
