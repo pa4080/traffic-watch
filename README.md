@@ -10,7 +10,7 @@ When the amount of the traffic (income+outcome) becomes equal or greater than th
 
 The script can be executed by Cron job. So you will be able to set different job for each day of the week, etc. Additionally when the limit is reached you can run the script manually with an additional amount of traffic.
 
-The script name should be **`traffic-watch`**, otherwise you should change its 5th line. My suggestion is to place (or symlink) it in `/usr/local/bin`, thus it will be available as shell command. Don't forget to make it executable. There is an interactive `install.bash`.
+The script name should be **`traffic-watch`**, otherwise you should change its 5th line. My suggestion is to place (or symlink) it in `/usr/local/bin`, thus it will be available as shell command. Don't forget to make it executable. There is also an interactive installator **`install.bash`**.
       
 The script should be executed as root (`sudo`). It creates a log file: `/tmp/traffic-watch-interface-name.log`, where you can check the last action. The script has two input variables:
 
