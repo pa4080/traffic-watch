@@ -1,4 +1,8 @@
 #!/bin/bash
+MSG1='Now you can use "traffic-watch" as shell command:'
+MSG2='sudo -b traffic-watch LIMIT INTERFACE'
+MSG2='sudo -b traffic-watch 5000 enp0s25'
+
 HEIGHT=17
 CHOICE_HEIGHT=9
 WIDTH=96
@@ -31,19 +35,19 @@ case $CHOICE in
     SymLink)
         sudo chmod +x "$(pwd)/traffic-watch.bash"
         sudo ln -s "$(pwd)/traffic-watch.bash" "/usr/local/bin/traffic-watch"
-	printf '\n\nNow you can use "traffic-watch" as shell command\n\n'
+	printf '%s\n\t%s\n\t%s\n\n' "$MSG1" "$MSG2" "$MSG3"
         ;;
 
     Copy)
         sudo chmod +x "$(pwd)/traffic-watch.bash"
         sudo cp "$(pwd)/traffic-watch.bash" "/usr/local/bin/traffic-watch"
-	printf '\n\nNow you can use "sudo -b traffic-watch LIMIT INTERFACE" as shell command\n\n'
+	printf '%s\n\t%s\n\t%s\n\n' "$MSG1" "$MSG2" "$MSG3"
         ;;
 
     StatusCMD)
 	printf '\n#!/bin/sh\ncat /tmp/traffic-watch-*.log\n' | sudo tee "/usr/local/bin/traffic-watch-status"
 	sudo chmod +x "/usr/local/bin/traffic-watch-status"
-	printf '\n\nNow you can use "sudo -b traffic-watch LIMIT INTERFACE" as shell command\n\n'
+	printf '%s\n\t%s\n\t%s\n\n' "$MSG1" "traffic-watch-status"
         ;;
 
     Remove)
@@ -61,7 +65,3 @@ case $CHOICE in
         ;;
 
 esac
-
-
-
-
