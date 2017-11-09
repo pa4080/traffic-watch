@@ -2,7 +2,7 @@
 
 Traffic-watch is a bash script that could helps you to deal with the daily traffic limitation management. It is helpful especially on headless machines because almost all similar applications are designed to work with GUI. It is designed for Ubuntu 16.04 or later and uses the command `ifconfig`.
 
-The sctip is inspired by the question <a href="https://askubuntu.com/questions/963522/daily-download-limit">Daily Download Lmit?</a> of <a href="https://askubuntu.com/">AskUbuntu.com</a>.
+The sctip is inspired by the question [Daily Download Lmit?](https://askubuntu.com/questions/963522/daily-download-limit) of [AskUbuntu.com](https://askubuntu.com/).
 
 The script will get the data of incoming and outgoing traffic from `ifconfig interface-name` and will compare the sum with a predefined limit value. This action will be repeated every 5 seconds (for example). 
 
