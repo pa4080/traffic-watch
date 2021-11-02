@@ -69,4 +69,4 @@ To run the script as root and push it into the background we shall use <a href="
 - [How to execute script when network interface is up?](https://askubuntu.com/questions/277284/execute-script-when-network-interface-is-up)
 - [More about the calculations](https://unix.stackexchange.com/a/40787/201297)
 - [How to get TX/RX bytes without `ifconfig`](https://serverfault.com/questions/533513/how-to-get-tx-rx-bytes-without-ifconfig)
-- [**The connected project `traffic-get`**](https://github.com/pa4080/traffic-get)
+- [**The connected project `traffic-get`**](https://github.com/metalevel-tech/traffic-get)
